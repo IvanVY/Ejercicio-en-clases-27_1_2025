@@ -8,27 +8,42 @@ namespace Ejercicio_en_clases_27_1_2025
 {
     internal class Program
     {
+        private static int vidasUsuario = 3;
+        private static int vidasPc = 3;
         static void Main(string[] args)
+        {
+            ejercicio();
+        }
+
+        private static void ejercicio()
         {
             do
             {
+
                 int opcionJugador = menuOpciones();
                 int random = new Random().Next(1, 4);
                 logicaJuego(opcionJugador, random);
 
+                mostrarGanador();
+                if (vidasUsuario == 0 || vidasPc == 0)
+                {
+                    Console.WriteLine("Quieres jugar de nuevo? (s/n): ");
+                    if (Console.ReadLine().ToLower().Equals("n")) break;
+                    vidasUsuario = vidasPc = 3;
+
+                } 
             } while (true);
         }
-
         private static int menuOpciones()
         {
-            Console.WriteLine("1.. Piedra, 2.. Papel, 3.. Tijera, 0 para salor ");
+            Console.WriteLine("1.. Piedra, 2.. Papel, 3.. Tijera");
             return int.Parse(Console.ReadLine());
         }
 
         private static void logicaJuego(int a, int b)
         {
-            int vidasUsuario = 3;
-            int vidasPc = 3;
+            
+
             String cadena = "";
             string[] opciones = {"Piedra", "Papel", "Tijera"};
             Console.WriteLine($"Usuario: {opciones[a - 1]} vs Pc: {opciones[b - 1]}");
@@ -40,86 +55,41 @@ namespace Ejercicio_en_clases_27_1_2025
                 vidasPc--;
                 cadena = $"Usuario gana, al pc le quedan {vidasPc}";
             }
-            else if ((b == 1 && a == 3) || (b == 2 && a == 1) || (b == 3 && a == 2))
+            else if (a==b)
+            {
+                Console.WriteLine("Empate");
+                
+            }
+            else
             {
                 Console.WriteLine("Perdiste");
                 vidasUsuario--;
                 cadena = $"Pc gana, te quedan {vidasUsuario} vidas";
             }
-            else
-            {
-                Console.WriteLine("Empate");
-            }
 
+            if (vidasPc == 0)
+            {
+                Console.WriteLine("Pc se quedo sin vidas, tu eres el ganador");
+                
+            }else if(vidasUsuario == 0)
+            {
+                Console.WriteLine("Te quedaste sin vidas, pc es el ganador");
+            }
             Console.WriteLine(cadena);
 
+        }
 
-
-
-            /*static string eleccionJugador()
+        private static void mostrarGanador()
+        {
+            if (vidasPc == 0)
             {
-                //solicitar al jugador que elija una opcion
-                Console.WriteLine("1 (Piedra), 2 (Papel), 3 (Tijera)");
-                int eleccion = int.Parse(Console.ReadLine());
-
-                switch (eleccion)
-                {
-                    case 1:
-                        return "Piedra";
-                    case 2:
-                        return "Papel";
-                    case 3:
-                        return "Tijera";
-                    default:
-                        Console.WriteLine("Opcion no valida");
-
-                        return eleccionJugador();
-                }
+                Console.WriteLine("Pc se quedo sin vidas, tu eres el ganador");
             }
-
-            //Funcion para generar la eleccion de la computadora
-            static string eleccionComputadora()
+            else if (vidasUsuario == 0)
             {
-                //Generar un numero aleatorio entre 1 y 3
-                Random random = new Random();
-                int eleccion = random.Next(1, 4);
-
-                switch (eleccion)
-                {
-                    case 1:
-                        return "Piedra";
-                    case 2:
-                        return "Papel";
-                    case 3:
-                        return "Tijera";
-                    default:
-                        return "Piedra";
-                }
+                Console.WriteLine("Te quedaste sin vidas, pc es el ganador");
             }
-
-            //funcion para determinar el resultado del juego
-            static void ganador(string jugador, string computadora)
-            {
-                //mostrar las elecciones del jugador y computador
-                Console.WriteLine($"Elegiste: {jugador}");
-                Console.WriteLine($"Computadora eligio: {computadora}");
-                //Determinar el ganador
-                if (jugador == computadora)
-                {
-                    Console.WriteLine("Empate");
-                }
-                else if (jugador == "Piedra" && computadora == "Tijera" ||
-                         jugador == "Papel" && computadora == "Piedra" ||
-                         jugador == "Tijera" && computadora == "Papel")
-                {
-                    Console.WriteLine("Ganaste");
-                }
-                else
-                {
-                    Console.WriteLine("Perdiste");
-                }
-            }*/
-
+            
         }
     }
 }
