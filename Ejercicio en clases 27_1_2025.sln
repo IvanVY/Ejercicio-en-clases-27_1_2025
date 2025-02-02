@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio en clases 27_1_2025", "Ejercicio en clases 27_1_2025\Ejercicio en clases 27_1_2025.csproj", "{A51C5155-7EAE-4FD7-B250-8B91CDC85CC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{38033BFA-61C7-43DC-A251-6B86353DE9EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{E4DDFA3F-65F3-4292-AA02-1FF7AB9FCA3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A51C5155-7EAE-4FD7-B250-8B91CDC85CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A51C5155-7EAE-4FD7-B250-8B91CDC85CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A51C5155-7EAE-4FD7-B250-8B91CDC85CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38033BFA-61C7-43DC-A251-6B86353DE9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38033BFA-61C7-43DC-A251-6B86353DE9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38033BFA-61C7-43DC-A251-6B86353DE9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38033BFA-61C7-43DC-A251-6B86353DE9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4DDFA3F-65F3-4292-AA02-1FF7AB9FCA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DDFA3F-65F3-4292-AA02-1FF7AB9FCA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DDFA3F-65F3-4292-AA02-1FF7AB9FCA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DDFA3F-65F3-4292-AA02-1FF7AB9FCA3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
